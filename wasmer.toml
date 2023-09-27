@@ -1,0 +1,19 @@
+[package]
+name = 'dynamite-bud/xorcist-utils'
+version = '0.3.5'
+description = 'Description for package xorcist-utils'
+wasmer-extra-flags = "--net --enable-threads --enable-bulk-memory"
+
+# See more keys and definitions at https://docs.wasmer.io/registry/manifest
+
+[dependencies]
+
+[[module]]
+name = 'xorcist-utils'
+source = 'target/wasm32-wasmer-wasi/release/x.wasm'
+abi = 'wasi'
+
+[[command]]
+name = 'x'
+module = 'xorcist-utils'
+runner = "wasi@unstable_"
